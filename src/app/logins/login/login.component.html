@@ -1,0 +1,112 @@
+<header class="header">
+    <!--start navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
+        <div class="container">
+            <h3 class="text-white mt-2">
+                <span class="border-warning border-top border-bottom py-1 text-white">Elite back</span>
+                <span class="text-danger">office</span>
+                <span class="border-warning border-top border-bottom py-1 text-white">Solution</span>
+            </h3>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars text-white" aria-hidden="true"></i>
+            </button>
+
+            <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="usertable.html">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link page-scroll dropdown-toggle" href="#" id="navbarDropdownPage" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pages
+                        </a>
+                        <div class="dropdown-menu submenu" aria-labelledby="navbarDropdownPage">
+                            <a class="dropdown-item" href="#">Login Page </a>
+                            <a class="dropdown-item" href="#">signup Page</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navbar-->
+</header>
+<!--header section end-->
+
+<!--body content wrap start-->
+<div class="main">
+
+    <section class="hero-section pt-5 background-img full-screen">
+        <div class="container">
+            <div class="row align-items-center justify-content-between pt-5 pt-sm-5 pt-md-5 pt-lg-0">
+                <div class="col-md-7 col-lg-6">
+                    <div class="hero-content-left text-white">
+                        <h1 class="text-white">Welcome Back !</h1>
+                        <p class="lead">
+                            Make UI for login page Use the reactive form with validation
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-5 pt-5">
+                    <div class="card login-signup-card shadow-lg mb-0">
+                        <div class="card-body px-md-5 py-5">
+                            <div class="mb-5">
+                                <h5 class="h3">Login</h5>
+                            </div>
+
+                            <!--login form-->
+                            <form [formGroup]="loginform" class="login-signup-form" (ngSubmit)="onsubmit()">
+
+
+                                <div class="form-group">
+                                    <label class="pb-1">Email Address</label>
+                                    <div class="input-group input-group-merge">
+                                        <div class="input-icon">
+                                            <div class="input-icon text-center mt-3">
+                                                <i class="fa fa-envelope color-primary" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <input type="email" formControlName="email" class="form-control" placeholder="admin@gmail.com">
+                                        <br>
+                                        <span class="text-danger" *ngIf="loginform.invalid ">Email Id is required</span>
+
+
+
+                                    </div>
+                                </div>
+                                <!-- Password -->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label class="pb-1">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group input-group-merge">
+                                        <div class="input-icon text-center mt-3">
+                                            <i class="fa fa-lock color-primary" aria-hidden="true"></i>
+                                        </div>
+                                        <input type="password" formControlName="password" class="form-control" placeholder="Enter your password"><br>
+                                        <span class="text-danger" *ngIf="loginform.controls['password'].dirty
+                                         && loginform.hasError('required','password')">password is required</span>
+
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div>
+                                    <a routerLink="/home"> <button [disabled]="loginform.invalid" type="submit" class="btn btn-lg btn-block solid-btn border-radius mt-4 mb-3"> Log In</button></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>

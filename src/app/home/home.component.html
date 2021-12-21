@@ -1,0 +1,40 @@
+<div class="container">
+    <h2 class="py-4">Data List</h2>
+    <div class="form-group mb-12">
+        <table class="table">
+            <colgroup>
+                <col width="5%">
+                <col width="*">
+                <col width="35%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">Sr N0.</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">UserAdress</th>
+                    <th scope="col">UserCity</th>
+                    <th scope="col">UserHouseName</th>
+                    <th scope="col">Stay Id</th>
+                    <th scope="col">Lati</th>
+                    <th scope="col">Logi</th>
+                    <th scope="col">User Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of getlist ; let i = index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td><img class="ig" src="{{item.imagePath}}" alt=""></td>
+                    <td>{{item.userAddress}}</td>
+                    <td>{{item.userCity}}</td>
+                    <td>{{item.userHouseName}}</td>
+                    <td>{{item.stayId}}</td>
+                    <td>{{item.lati}}</td>
+                    <td>{{item.longi}}</td>
+                    <td>{{item.userId}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
